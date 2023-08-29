@@ -1,4 +1,4 @@
-public abstract class Prototyp {
+public abstract class Prototyp extends Ekstras {
     protected int x;
     protected int y;
 
