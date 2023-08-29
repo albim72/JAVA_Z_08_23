@@ -16,4 +16,14 @@ public enum EPlaneta {
         this.masa = masa;
         this.promien = promien;
     }
+    
+    public double masa() {return masa;}
+    public double radius() {return promien;}
+    
+    public static final double G = 6.673E-11;
+    
+    public double przeliczGrawitacje() {return G*masa/(promien*promien);}
+    
+    
+    public double przeliczWage(double innaWaga){return innaWaga*przeliczGrawitacje();}
 }
