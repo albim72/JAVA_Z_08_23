@@ -45,16 +45,17 @@ public class XMLExportVisitor implements Visitor {
     public String visitCompoundGraphic(CompoundShape cg) {
         return "<compound_graphic>\n" +
                 "   <id>" + cg.getId() + "</id>\n" +
+                _visitCompoundGraphic(cg) + 
                 "</compound_graphic>";
     }
-    
+
     private String _visitCompoundGraphic(CompoundShape cg){
         StringBuilder sb = new StringBuilder();
         for(Shape shape:cg.children){
             String obj = shape.accept(this);
             obj = "  " + obj.replace("\n","\n  ") + "\n";
             sb.append(obj);
-                    
+
         }
         return sb.toString();
     }
