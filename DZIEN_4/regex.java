@@ -42,5 +42,12 @@ public class Main {
         while (mat.find())
             System.out.println("Dopasowana sekwencja: " + mat.group());
 
+        System.out.println("__________________________________");
+
+        pat = Pattern.compile("[ ,.!]");
+        String strs[] = pat.split("jeden dwa.alfa,beta!teta._");
+       for(int i=0;i< strs.length;i++)
+           System.out.println("Wyraz: " + strs[i]);
+
     }
 }
