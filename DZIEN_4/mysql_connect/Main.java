@@ -46,10 +46,18 @@ public class Main {
             }
 
             String usuwanie = "DELETE FROM registration WHERE id=?";
+            String zmiana = "UPDATE registration SET last = ? where first = ?;";
             //st.executeUpdate(usuwanie,107);
             PreparedStatement prepStt = con.prepareStatement(usuwanie);
             prepStt.setInt(1,107);
             prepStt.execute();
+
+            PreparedStatement updtPrep = con.prepareStatement(zmiana);
+            updtPrep.setString(1,"Nowakowski");
+            updtPrep.setString(2,"Henryk");
+
+            updtPrep.executeUpdate();
+
             con.close();
 
         } catch (SQLException e) {
